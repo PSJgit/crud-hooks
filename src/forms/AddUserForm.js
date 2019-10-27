@@ -5,13 +5,15 @@ const AddUserForm = props => {
   const [user, setUser] = useState(initialFormState)
 
   const handleInputChange = event => {
-    const { name, value } = event.target
-
+    const { name, value } = event.target;
+    console.log(`event target ${event.target}`)
+    console.log(`name ${name}, value: ${value}`);
+    
     setUser({ ...user, [name]: value })
   }
 
-  console.log(`name ${name}, value: ${value}`);
-  console.log(`user:, ${user}`);
+  console.log('user',user);
+  
   return (
     <form
       onSubmit={event => {
